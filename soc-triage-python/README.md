@@ -1,4 +1,4 @@
-# 🛡️ SOC Triage Lab — Python Security Monitoring & Incident Response
+# SOC Triage Lab — Python Security Monitoring & Incident Response
 
 [![CI](https://img.shields.io/badge/tests-unittest-blue)](#automated-testing) ![Python](https://img.shields.io/badge/python-3.10%2B-blue) ![License: MIT](https://img.shields.io/badge/license-MIT-green) ![Lab](https://img.shields.io/badge/data-synthetic_only-informational)
 
