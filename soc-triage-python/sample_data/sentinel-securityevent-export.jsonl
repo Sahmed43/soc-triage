@@ -1,0 +1,2 @@
+{"TimeGenerated": "2026-10-15T21:00:00Z", "EventID": 4625, "Computer": "dc-02.lab.example", "TargetUserName": "demo-user", "IpAddress": "203.0.113.99", "EventRecordId": "sentinel-1"}
+{"TimeGenerated": "2026-10-15T21:00:40Z", "EventID": 4624, "Computer": "dc-02.lab.example", "TargetUserName": "demo-user", "IpAddress": "203.0.113.99", "EventRecordId": "sentinel-2"}

@@ -1,0 +1,11 @@
+// Microsoft Sentinel / Azure Monitor: sample hunting query.
+// Requires Windows SecurityEvent ingestion and columns populated by your connector.
+// Validate against your tenant's schema before enabling a scheduled analytics rule.
+SecurityEvent
+| where TimeGenerated >= ago(15m)
+| where EventID == 4625
+| where isnotempty(IpAddress) and isnotempty(TargetUserName)
+| summarize FailedCount = count(), FirstSeen = min(TimeGenerated), TimeGenerated = max(TimeGenerated)
+    by Computer, TargetUserName, IpAddress
+| where FailedCount >= 5
+| project TimeGenerated, Computer, TargetUserName, IpAddress, FailedCount, FirstSeen

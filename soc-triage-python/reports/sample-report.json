@@ -1,0 +1,385 @@
+{
+  "project": "SOC Triage Lab",
+  "classification": "SYNTHETIC TRAINING DATA ONLY",
+  "generated_at_utc": "2026-11-07T19:38:03.122427Z",
+  "total_events": 18,
+  "event_sources": {
+    "windows_security": 18
+  },
+  "event_ids": {
+    "1102": 1,
+    "4624": 2,
+    "4625": 12,
+    "4688": 2,
+    "4732": 1
+  },
+  "total_findings": 6,
+  "severity_counts": {
+    "critical": 0,
+    "high": 5,
+    "medium": 1,
+    "low": 0
+  },
+  "findings": [
+    {
+      "id": "SOC-bb6ce9ca7b21",
+      "rule_id": "AUTH-003",
+      "title": "Successful logon following repeated failures",
+      "severity": "high",
+      "technique": "T1110",
+      "tactic": "Credential Access",
+      "description": "Successful authentication followed 6 recent failures for jordan from 203.0.113.24.",
+      "triage_steps": [
+        "Verify that the authentication was authorized.",
+        "Correlate session activity and endpoint alerts after the logon.",
+        "Confirm whether an expected password reset occurred."
+      ],
+      "recommended_actions": [
+        "Escalate confirmed suspicious access for session revocation review.",
+        "Preserve relevant logs and obtain approval before containment."
+      ],
+      "first_seen": "2026-10-15T20:01:00Z",
+      "last_seen": "2026-10-15T20:06:00Z",
+      "host": "dc-01.lab.example",
+      "user": "jordan",
+      "src_ip": "203.0.113.24",
+      "evidence": [
+        {
+          "timestamp": "2026-10-15T20:01:00Z",
+          "record_id": "evt-003",
+          "event_id": 4625,
+          "host": "dc-01.lab.example",
+          "user": "jordan",
+          "src_ip": "203.0.113.24",
+          "process": "",
+          "command_line": "",
+          "target_group": ""
+        },
+        {
+          "timestamp": "2026-10-15T20:02:00Z",
+          "record_id": "evt-004",
+          "event_id": 4625,
+          "host": "dc-01.lab.example",
+          "user": "jordan",
+          "src_ip": "203.0.113.24",
+          "process": "",
+          "command_line": "",
+          "target_group": ""
+        },
+        {
+          "timestamp": "2026-10-15T20:03:00Z",
+          "record_id": "evt-005",
+          "event_id": 4625,
+          "host": "dc-01.lab.example",
+          "user": "jordan",
+          "src_ip": "203.0.113.24",
+          "process": "",
+          "command_line": "",
+          "target_group": ""
+        },
+        {
+          "timestamp": "2026-10-15T20:04:00Z",
+          "record_id": "evt-006",
+          "event_id": 4625,
+          "host": "dc-01.lab.example",
+          "user": "jordan",
+          "src_ip": "203.0.113.24",
+          "process": "",
+          "command_line": "",
+          "target_group": ""
+        },
+        {
+          "timestamp": "2026-10-15T20:05:00Z",
+          "record_id": "evt-007",
+          "event_id": 4625,
+          "host": "dc-01.lab.example",
+          "user": "jordan",
+          "src_ip": "203.0.113.24",
+          "process": "",
+          "command_line": "",
+          "target_group": ""
+        },
+        {
+          "timestamp": "2026-10-15T20:06:00Z",
+          "record_id": "evt-008",
+          "event_id": 4624,
+          "host": "dc-01.lab.example",
+          "user": "jordan",
+          "src_ip": "203.0.113.24",
+          "process": "",
+          "command_line": "",
+          "target_group": ""
+        }
+      ]
+    },
+    {
+      "id": "SOC-b33cc4444cd8",
+      "rule_id": "AUTH-002",
+      "title": "Possible password spraying",
+      "severity": "high",
+      "technique": "T1110.003",
+      "tactic": "Credential Access",
+      "description": "Failures for at least 5 distinct users from 198.51.100.8 within 15 minutes.",
+      "triage_steps": [
+        "Review affected accounts and IP reputation within authorized systems.",
+        "Check for any related successful logins.",
+        "Assess whether a shared proxy or misconfigured app explains the pattern."
+      ],
+      "recommended_actions": [
+        "Notify the identity response team if suspicious.",
+        "Consider targeted identity controls subject to change approval."
+      ],
+      "first_seen": "2026-10-15T20:08:00Z",
+      "last_seen": "2026-10-15T20:12:00Z",
+      "host": "dc-01.lab.example",
+      "user": "erin",
+      "src_ip": "198.51.100.8",
+      "evidence": [
+        {
+          "timestamp": "2026-10-15T20:08:00Z",
+          "record_id": "evt-009",
+          "event_id": 4625,
+          "host": "dc-01.lab.example",
+          "user": "alice",
+          "src_ip": "198.51.100.8",
+          "process": "",
+          "command_line": "",
+          "target_group": ""
+        },
+        {
+          "timestamp": "2026-10-15T20:09:00Z",
+          "record_id": "evt-010",
+          "event_id": 4625,
+          "host": "dc-01.lab.example",
+          "user": "bob",
+          "src_ip": "198.51.100.8",
+          "process": "",
+          "command_line": "",
+          "target_group": ""
+        },
+        {
+          "timestamp": "2026-10-15T20:10:00Z",
+          "record_id": "evt-011",
+          "event_id": 4625,
+          "host": "dc-01.lab.example",
+          "user": "carol",
+          "src_ip": "198.51.100.8",
+          "process": "",
+          "command_line": "",
+          "target_group": ""
+        },
+        {
+          "timestamp": "2026-10-15T20:11:00Z",
+          "record_id": "evt-012",
+          "event_id": 4625,
+          "host": "dc-01.lab.example",
+          "user": "devon",
+          "src_ip": "198.51.100.8",
+          "process": "",
+          "command_line": "",
+          "target_group": ""
+        },
+        {
+          "timestamp": "2026-10-15T20:12:00Z",
+          "record_id": "evt-013",
+          "event_id": 4625,
+          "host": "dc-01.lab.example",
+          "user": "erin",
+          "src_ip": "198.51.100.8",
+          "process": "",
+          "command_line": "",
+          "target_group": ""
+        }
+      ]
+    },
+    {
+      "id": "SOC-b8d02e45012b",
+      "rule_id": "PROC-001",
+      "title": "PowerShell with encoded command argument",
+      "severity": "high",
+      "technique": "T1059.001",
+      "tactic": "Execution",
+      "description": "Potentially suspicious PowerShell encoded-command invocation (may be legitimate administration).",
+      "triage_steps": [
+        "Review the complete process tree and execution context.",
+        "Check the command content in an isolated analysis environment.",
+        "Correlate with endpoint alerts and authorized scripts."
+      ],
+      "recommended_actions": [
+        "Escalate confirmed unauthorized execution for endpoint containment review.",
+        "Preserve process, script, and host evidence."
+      ],
+      "first_seen": "2026-10-15T20:13:00Z",
+      "last_seen": "2026-10-15T20:13:00Z",
+      "host": "workstation-07.lab.example",
+      "user": "jordan",
+      "src_ip": "",
+      "evidence": [
+        {
+          "timestamp": "2026-10-15T20:13:00Z",
+          "record_id": "evt-014",
+          "event_id": 4688,
+          "host": "workstation-07.lab.example",
+          "user": "jordan",
+          "src_ip": "",
+          "process": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+          "command_line": "powershell.exe -NoProfile -EncodedCommand UwBlAGEAZAAtAEgAbwBzAHQAIAAiAGQAZQBtAG8AIgA=",
+          "target_group": ""
+        }
+      ]
+    },
+    {
+      "id": "SOC-f668b23e3314",
+      "rule_id": "ID-001",
+      "title": "Privileged group membership modification",
+      "severity": "high",
+      "technique": "T1098.007",
+      "tactic": "Persistence",
+      "description": "Membership changed for the privileged group 'Administrators'.",
+      "triage_steps": [
+        "Confirm change ticket, approver, and identity of the operator.",
+        "Identify the member added using the full original security event.",
+        "Review follow-on authentications and privilege use."
+      ],
+      "recommended_actions": [
+        "Revert unauthorized access only under the approved incident process.",
+        "Preserve audit data and escalate to the identity owner."
+      ],
+      "first_seen": "2026-10-15T20:14:00Z",
+      "last_seen": "2026-10-15T20:14:00Z",
+      "host": "dc-01.lab.example",
+      "user": "helpdesk-svc",
+      "src_ip": "",
+      "evidence": [
+        {
+          "timestamp": "2026-10-15T20:14:00Z",
+          "record_id": "evt-015",
+          "event_id": 4732,
+          "host": "dc-01.lab.example",
+          "user": "helpdesk-svc",
+          "src_ip": "",
+          "process": "",
+          "command_line": "",
+          "target_group": "Administrators"
+        }
+      ]
+    },
+    {
+      "id": "SOC-55fe4d81aac0",
+      "rule_id": "LOG-001",
+      "title": "Windows security event log cleared",
+      "severity": "high",
+      "technique": "T1070.001",
+      "tactic": "Defense Evasion",
+      "description": "A Windows security audit log clear event was recorded; verify whether maintenance was authorized.",
+      "triage_steps": [
+        "Validate the event against approved maintenance activity.",
+        "Check adjacent hosts, EDR telemetry, and alternate log sources.",
+        "Identify the operator and preceding actions."
+      ],
+      "recommended_actions": [
+        "Preserve available off-host logs.",
+        "Escalate if the audit trail was deliberately removed."
+      ],
+      "first_seen": "2026-10-15T20:15:00Z",
+      "last_seen": "2026-10-15T20:15:00Z",
+      "host": "workstation-07.lab.example",
+      "user": "jordan",
+      "src_ip": "",
+      "evidence": [
+        {
+          "timestamp": "2026-10-15T20:15:00Z",
+          "record_id": "evt-016",
+          "event_id": 1102,
+          "host": "workstation-07.lab.example",
+          "user": "jordan",
+          "src_ip": "",
+          "process": "",
+          "command_line": "",
+          "target_group": ""
+        }
+      ]
+    },
+    {
+      "id": "SOC-650c4ee8a783",
+      "rule_id": "AUTH-001",
+      "title": "Repeated failed authentication",
+      "severity": "medium",
+      "technique": "T1110.001",
+      "tactic": "Credential Access",
+      "description": "At least 5 failed logons for jordan from 203.0.113.24 in 10 minutes.",
+      "triage_steps": [
+        "Verify account and source IP ownership.",
+        "Look for successes, MFA events, and other affected accounts.",
+        "Compare activity with maintenance windows and user reports."
+      ],
+      "recommended_actions": [
+        "Escalate suspected unauthorized access to the incident owner.",
+        "Apply account protection or source blocking only with approval."
+      ],
+      "first_seen": "2026-10-15T20:00:00Z",
+      "last_seen": "2026-10-15T20:04:00Z",
+      "host": "dc-01.lab.example",
+      "user": "jordan",
+      "src_ip": "203.0.113.24",
+      "evidence": [
+        {
+          "timestamp": "2026-10-15T20:00:00Z",
+          "record_id": "evt-002",
+          "event_id": 4625,
+          "host": "dc-01.lab.example",
+          "user": "jordan",
+          "src_ip": "203.0.113.24",
+          "process": "",
+          "command_line": "",
+          "target_group": ""
+        },
+        {
+          "timestamp": "2026-10-15T20:01:00Z",
+          "record_id": "evt-003",
+          "event_id": 4625,
+          "host": "dc-01.lab.example",
+          "user": "jordan",
+          "src_ip": "203.0.113.24",
+          "process": "",
+          "command_line": "",
+          "target_group": ""
+        },
+        {
+          "timestamp": "2026-10-15T20:02:00Z",
+          "record_id": "evt-004",
+          "event_id": 4625,
+          "host": "dc-01.lab.example",
+          "user": "jordan",
+          "src_ip": "203.0.113.24",
+          "process": "",
+          "command_line": "",
+          "target_group": ""
+        },
+        {
+          "timestamp": "2026-10-15T20:03:00Z",
+          "record_id": "evt-005",
+          "event_id": 4625,
+          "host": "dc-01.lab.example",
+          "user": "jordan",
+          "src_ip": "203.0.113.24",
+          "process": "",
+          "command_line": "",
+          "target_group": ""
+        },
+        {
+          "timestamp": "2026-10-15T20:04:00Z",
+          "record_id": "evt-006",
+          "event_id": 4625,
+          "host": "dc-01.lab.example",
+          "user": "jordan",
+          "src_ip": "203.0.113.24",
+          "process": "",
+          "command_line": "",
+          "target_group": ""
+        }
+      ]
+    }
+  ],
+  "disclaimer": "Heuristic detections require analyst validation; findings are not proof of compromise."
+}

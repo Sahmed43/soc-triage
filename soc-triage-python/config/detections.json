@@ -1,0 +1,5 @@
+{
+  "brute_force": {"threshold": 5, "window_minutes": 10},
+  "password_spray": {"unique_user_threshold": 5, "window_minutes": 15},
+  "success_after_failures": {"threshold": 5, "window_minutes": 10}
+}

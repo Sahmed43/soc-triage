@@ -1,0 +1,9 @@
+// Microsoft Sentinel: potentially suspicious encoded PowerShell invocations.
+// Windows event 4688 command-line auditing must be enabled and ingested.
+// Syntax and sample fields require validation in your own workspace.
+SecurityEvent
+| where TimeGenerated >= ago(1d)
+| where EventID == 4688
+| where NewProcessName has_any ("powershell", "pwsh")
+| where CommandLine matches regex @"(?i)(^|\s)-(enc(odedcommand)?|e(ncodedc(ommand)?)?)\b"
+| project TimeGenerated, Computer, Account, NewProcessName, CommandLine, ParentProcessName

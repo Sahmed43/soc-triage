@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "soc-triage-lab"
+version = "1.0.0"
+description = "Offline-first SOC detection engineering and incident triage lab in Python"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "Cybersecurity Portfolio"}]
+keywords = ["cybersecurity", "soc", "python", "incident-response", "mitre-attack", "siem"]
+classifiers = ["Programming Language :: Python :: 3", "Topic :: Security"]
+
+[project.scripts]
+soc-triage = "soc_triage.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["soc_triage*"]
+
+[tool.setuptools.package-data]
+soc_triage = ["py.typed"]
