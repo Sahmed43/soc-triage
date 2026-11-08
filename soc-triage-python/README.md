@@ -165,4 +165,4 @@ soc-triage-python/
 
 ---
 
-**Portfolio presentation tip:** Be ready to explain why a failed login isn't necessarily malicious, why the tool correlates account + IP, which telemetry sources it lacks, and how you would validate a Microsoft Sentinel rule before shipping it. The strongest engineering story is understanding and improving a working system, not merely listing tools.
+
